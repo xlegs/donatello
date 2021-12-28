@@ -338,6 +338,7 @@ function generateModel() {
     createGeometry(donatello.vertices, donatello.leafVertices, donatello.petalVertices);
 
     renderer.setClearColor(canvasColor);
+    centerCamera();
 }
 
 function createGeometry(lineVertices, leafVertices, petalVertices) {
