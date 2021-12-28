@@ -49,8 +49,8 @@ function init() {
     sidebarButton.className = "visible";
 
     // set default settings
-    autoRotateCheckbox.checked = true;
-    orthoCamCheckbox.checked = false;
+    autoRotateCheckbox.checked = false;
+    orthoCamCheckbox.checked = true;
     document.getElementById("max-vertex-count").value = 500000;
 
     renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true, preserveDrawingBuffer: true } );
