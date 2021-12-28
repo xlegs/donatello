@@ -53,7 +53,7 @@ function init() {
     orthoCamCheckbox.checked = false;
     document.getElementById("max-vertex-count").value = 500000;
 
-    renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
+    renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true, preserveDrawingBuffer: true } );
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize( window.innerWidth, window.innerHeight, false );
     renderer.setClearColor(canvasColor);
