@@ -42,17 +42,18 @@ function init() {
     autoCenterButton = document.getElementById("auto-center-button");
     autoRotateCheckbox = document.getElementById("auto-rotate-checkbox");
     orthoCamCheckbox = document.getElementById("ortho-cam-checkbox");
-    
+    saveButton = document.getElementById("save-button");
+
     exampleSelect.value = "";
     sidebar.style.display = "block";
     sidebarButton.className = "visible";
 
     // set default settings
-    autoRotateCheckbox.checked = false;
+    autoRotateCheckbox.checked = true;
     orthoCamCheckbox.checked = false;
     document.getElementById("max-vertex-count").value = 500000;
 
-    renderer = new THREE.WebGLRenderer( { antialias: true } );
+    renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize( window.innerWidth, window.innerHeight, false );
     renderer.setClearColor(canvasColor);
@@ -286,7 +287,18 @@ function addEventListeners() {
 
     addRuleButton.addEventListener('click', addRule);
     generateButton.addEventListener('click', generateModel);
+    saveButton.addEventListener('click', saveFile);
     autoCenterButton.addEventListener('click', centerCamera);
+}
+
+function saveFile() {
+   var canvas = document.querySelector("#canvas-container > canvas");
+   var image = canvas.toDataURL("image/png");
+   console.log(image);
+   window.open(
+    image,
+    '_blank'
+  );
 }
 
 function centerCamera() {
