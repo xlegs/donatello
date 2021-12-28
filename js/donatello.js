@@ -293,12 +293,16 @@ function addEventListeners() {
 
 function saveFile() {
    var canvas = document.querySelector("#canvas-container > canvas");
-   var image = canvas.toDataURL("image/png");
-   console.log(image);
-   window.open(
-    image,
-    '_blank'
-  );
+   var data = canvas.toDataURL("image/png");
+
+    let w = window.open('about:blank');
+    let image = new Image();
+    image.src = data;
+
+    setTimeout(function(){
+    w.document.write(image.outerHTML);
+    }, 0);
+
 }
 
 function centerCamera() {
