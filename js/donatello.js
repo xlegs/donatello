@@ -20,7 +20,7 @@ var autoRotateCheckbox;
 var orthoCamCheckbox;
 var timeout;
 var palettes;
-var canvasColor = '#f2f2f2';
+var canvasColor = '#fff';
 var lineColor = '#4c4c4c';
 var leafColor = '#1d8348';
 var petalColor = '#ff5733';
